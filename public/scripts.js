@@ -45,8 +45,8 @@ function showHideShots() {
   
   function getRandomShot(game) {
     const availableShots = {
-      rps: ['Rock', 'Paper', 'Scissors'],
-      rpsls: ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
+      rps: ['rock', 'paper', 'scissors'],
+      rpsls: ['rock', 'paper', 'scissors', 'lizard', 'spock']
     };
   
     const shots = availableShots[game];

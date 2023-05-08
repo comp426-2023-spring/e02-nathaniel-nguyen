@@ -8,10 +8,10 @@ h1 {
 p {
 }
 
-.hidden {
-    display: none;
+div.active {
+    display: block;
 }
 
-.center {
-    text-align: center;
+div.inactive {
+    display: none;
 }

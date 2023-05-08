@@ -11,16 +11,16 @@ function showHideShots() {
       if (rpsGame) {
         $(".input-container.rps").show();
         $(".input-container.rpsls").hide(); // Hide Lizard and Spock when playing RPS against an opponent
-        $("label[class='input-container' for='rock'], label[class='input-container' for='paper'], label[class='input-container' for='scissors']").show(); // Show Rock, Paper, and Scissors labels
-        $("label[class='input-container' for='lizard'], label[class='input-container' for='spock']").hide();
+        $("label[class='input-container' for='Rock'], label[class='input-container' for='Paper'], label[class='input-container' for='Scissors']").show(); // Show Rock, Paper, and Scissors labels
+        $("label[class='input-container' for='Lizard'], label[class='input-container' for='Spock']").hide();
       } else {
         $(".input-container.rps, .input-container.rpsls").show();
-        $("label[class='input-container' for='rock'], label[class='input-container' for='paper'], label[class='input-container' for='scissors'], label[class='input-container' for='lizard'], label[class='input-container' for='spock']").show(); // Hide the labels      // Show all labels
+        $("label[class='input-container' for='Rock'], label[class='input-container' for='Paper'], label[class='input-container' for='Scissors'], label[class='input-container' for='Lizard'], label[class='input-container' for='Spock']").show(); // Hide the labels      // Show all labels
       }
     } else {
       $(".input-container.rps, .input-container.rpsls").hide();
   
-      $("label[class='input-container' for='rock'], label[class='input-container' for='paper'], label[class='input-container' for='scissors'], label[class='input-container' for='lizard'], label[class='input-container' for='spock']").hide(); // Hide the labels
+      $("label[class='input-container' for='Rock'], label[class='input-container' for='Paper'], label[class='input-container' for='Scissors'], label[class='input-container' for='Lizard'], label[class='input-container' for='Spock']").hide(); // Hide the labels
     }
   
     // Hide the radio inputs and show only the input-container elements
@@ -36,7 +36,7 @@ function showHideShots() {
   }
   
   function resetShotSelection() {
-    let firstShot = 'rock'
+      let firstShot = 'Rock';
   
     // Reset the selected shot to a random valid option for the chosen game
     $('input[type=radio][name=shot]').prop('checked', false);
@@ -45,8 +45,8 @@ function showHideShots() {
   
   function getRandomShot(game) {
     const availableShots = {
-      rps: ['rock', 'paper', 'scissors'],
-      rpsls: ['rock', 'paper', 'scissors', 'lizard', 'spock']
+      rps: ['Rock', 'Paper', 'Scissors'],
+      rpsls: ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
     };
   
     const shots = availableShots[game];
@@ -79,7 +79,7 @@ function showHideShots() {
     } else {
       let you = `You: ${result.player}`;
       let opponent = `Opponent: ${result.opponent}`;
-      let outcome = `Result: ${result.result.toUpperCase()}!`;
+      let outcome = `Result: ${result.result}`;
       resultsDiv.innerHTML = `${you}<br>${opponent}<br>${outcome}`;
     }
   }

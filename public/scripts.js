@@ -2,20 +2,20 @@
 // check out the coin-server example from a previous COMP 426 semester.
 // https://github.com/jdmar3/coinserver
 
-function home() {
-    document.getElementById("rules").className = "inactive";
+function homeNav() {
+    document.getElementById("help").className = "inactive";
     document.getElementById("home").className = "active";
 }
 
-function rules() {
+function helpNav() {
     reset();
     document.getElementById("home").className = "inactive";
     document.getElementById("disp").className = "inactive";
-    document.getElementById("rules").className = "active";
+    document.getElementById("help").className = "active";
 }
 
-function start_over() {
-    document.getElementById("rules").className = "inactive";
+function reset() {
+    document.getElementById("help").className = "inactive";
     document.getElementById("home").className = "active";
     document.getElementById("opponent").className = "inactive";
     document.getElementById("disp2").className = "inactive";
@@ -76,10 +76,10 @@ function getGame() {
     } else if (document.getElementById("no-opponent").checked) {
         document.getElementById("opponent-options-rps").className = "inactive";
         document.getElementById("opponent-options-rpsls").className = "inactive";
-        document.getElementById("disp2").innerHTML = "Random Draw.";
+        document.getElementById("disp2").innerHTML = "Random Opponent";
         playRandom();
     } else {
-        document.getElementById("disp2").innerHTML = "Select an opponent.";
+        document.getElementById("disp2").innerHTML = "Select an option.";
 }
 }
 

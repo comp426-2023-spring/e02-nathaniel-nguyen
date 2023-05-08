@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
     <head>
         <title>Rock</title>
         <meta charset="UTF-8">
+        <!-- Link to your script file(s) and CSS in here somewhere -->
         <script src="scripts.js"></script>
         <link rel="stylesheet" href="styles.css">
     </head>
     <!-- beginning of the stuff you can see -->
     <body>
         <nav>
-            <button id="homenav" onclick="home()" type="button" class="active">Home</button>
-            <button id="rules" onclick="rules()" type="button">Rules</button>
-            <button id="start_over" onclick="start_over()" type="button" class="active">Start Over</button>
+            <button id="homenav" onclick="homeNav()" type="button" class="active">Home</button>
+            <button id="helpnav" onclick="helpNav()" type="button">Rules</button>
+            <button id="reset" onclick="reset()" type="button" class="active">Start Over</button>
         </nav>
         <div class="container">
             <div id="home" class="active">
@@ -20,7 +21,7 @@
                     <label for="rps">Play rock, paper, scissors?</label><br>
                     <input type="radio" id="rpsls" name="option" value="rpsls">
                     <label for="rpsls">Play rock, paper, scissors, lizard, Spock?</label><br><br>
-                    <button type="submit" onclick="display()">Submit</button>
+                    <button type="submit" onclick="display()">Next</button>
                 </form><br>
             </div>
 
@@ -34,7 +35,7 @@
                     <label for="opps">Opponent</label><br>
                     <input type="radio" id="no-opponent" name="opp" value="no-opponent">
                     <label for="no-opponent">Random Draw</label><br><br>
-                    <button type="submit" onclick="getGame()">Submit</button>
+                    <button type="submit" onclick="getGame()">Next</button>
                 </form><br>
             </div>
             <div id="disp2" class="inactive">
@@ -55,7 +56,7 @@
                     <label for="paper">Paper</label><br>
                     <input type="radio" id="scissors" name="player" value="scissors">
                     <label for="scissors">Scissors</label><br>
-                    <button type="submit" onclick="getOpp()">Submit</button>
+                    <button type="submit" onclick="getOpp()">Next</button>
                 </form><br>
             </div>
 
@@ -71,12 +72,12 @@
                     <label for="lizard">Lizard</label><br>
                     <input type="radio" id="spock" name="player2" value="spock">
                     <label for="spock">Spock</label><br>
-                    <button type="submit" onclick="getOpp()">Submit</button>
+                    <button type="submit" onclick="getOpp()">Next</button>
                 </form><br>
             </div>
 
             <div id="result" class="inactive">
-                <h1>Result</h1>
+                <h1>Result:</h1>
             </div>
 
             <div id="result5" class="inactive"></div>
@@ -93,7 +94,7 @@
 
             <div id="result4" class="inactive"></div>
 
-            <div id="rules2" class="inactive">
+            <div id="help" class="inactive">
                 <h2>Rules for Rock Paper Scissors:</h2>
                 <ul>
                     <li>Scissors CUTS Paper</li>
@@ -112,8 +113,4 @@
                     <li>Paper DISPROVES Spock</li>
                     <li>Spock VAPORIZES Rock</li>
                     <li>Rock CRUSHES Scissors</li>
-                </ul>
-            </div>
-        </div>
-    </body>
-</html>
+                </ul></div></div></body></html>

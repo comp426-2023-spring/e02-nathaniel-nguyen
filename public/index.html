@@ -1,116 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Rock</title>
-        <meta charset="UTF-8">
-        <!-- Link to your script file(s) and CSS in here somewhere -->
-        <script src="scripts.js"></script>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <!-- beginning of the stuff you can see -->
-    <body>
-        <nav>
-            <button id="homenav" onclick="homeNav()" type="button" class="active">Home</button>
-            <button id="helpnav" onclick="helpNav()" type="button">Rules</button>
-            <button id="reset" onclick="reset()" type="button" class="active">Start Over</button>
-        </nav>
-        <div class="container">
-            <div id="home" class="active">
-                <form>
-                    <input type="radio" id="rps" name="option" value="rps">
-                    <label for="rps">Play rock, paper, scissors?</label><br>
-                    <input type="radio" id="rpsls" name="option" value="rpsls">
-                    <label for="rpsls">Play rock, paper, scissors, lizard, Spock?</label><br><br>
-                    <button type="submit" onclick="display()">Next</button>
-                </form><br>
-            </div>
+<head>
+	<meta charset="utf-8">
+	<title>RPS and RPSLS</title>
+	<link href="./styles.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="./scripts.js"></script>
+	<!-- Link to your script file(s) and CSS in here somewhere -->
+</head>
 
+<body onload="showHideShots()">
+	<div class="container">
+		<form id="userinput" class="" action="javascript:void(0);">
+			<input type="radio" id="rps" name="game" value="rps" checked
+				onclick="resetShotSelection(); showHideShots();">
+			<label for="rps">Play rock, paper, scissors?</label>
+			<a href="https://www.wikihow.com/Play-Rock,-Paper,-Scissors">RULES FOR RPS</a>
+			<br><br>
+			<input type="radio" id="rpsls" name="game" value="rpsls" onclick="resetShotSelection(); showHideShots();">
+			<label for="rpsls">Play rock, paper, scissors, lizard, Spock?</label>
+			<a href="https://www.wikihow.com/Play-Rock-Paper-Scissors-Lizard-Spock">
+				RULES FOR RPSLS</a>
+			<br><br>
 
-            <div id="disp" class="inactive">
+			<input type="checkbox" id="opponent" name="playtype" value="opponent"
+				onclick="resetShotSelection(); showHideShots();">
+			<label for="opponent">Play against an opponent?</label>
+			<br><br>
+			<div class="input-container rps">
+				<input type="radio" id="rock" name="shot" value="rock" class="shots">
+				<label class="input-container" for="rock">Rock</label>
+			</div>
+			<div class="input-container rps">
+				<input type="radio" id="paper" name="shot" value="paper" class="shots">
+				<label class="input-container" for="paper">Paper</label>
+			</div>
+			<div class="input-container rps">
+				<input type="radio" id="scissors" name="shot" value="scissors" class="shots">
+				<label class="input-container" for="scissors">Scissors</label>
+			</div>
+			<div class="input-container rpsls">
+				<input type="radio" id="lizard" name="shot" value="lizard" class="shots">
+				<label class="input-container" for="lizard">Lizard</label>
+			</div>
+			<div class="input-container rpsls">
+				<input type="radio" id="spock" name="shot" value="spock" class="shots">
+				<label class="input-container" for="spock">Spock</label>
+			</div>
+			<br><br>
+		    <button type="submit" id="play" name="controls" onclick="playGame()">Play</button>
+		    <button type="submit" id="startover" name="controls" onclick="startOver()">Start Over</button>
+			<!--			<br><br>
+			<input type="submit" id="play" name="controls" value="Play">
+      <input type="submit" id="startover" name="controls" value="Start Over"> -->
+		</form>
+		<div id="results"></div>
 
-            </div>
-            <div id="opponent" class="inactive">
-                <form>
-                    <input type="radio" id="opps" name="opp" value="opponent">
-                    <label for="opps">Opponent</label><br>
-                    <input type="radio" id="no-opponent" name="opp" value="no-opponent">
-                    <label for="no-opponent">Random Draw</label><br><br>
-                    <button type="submit" onclick="getGame()">Next</button>
-                </form><br>
-            </div>
-            <div id="disp2" class="inactive">
-
-            </div>
-            <div id="game" class="inactive">
-
-            </div>
-            <div id="shot" class="inactive">
-
-            </div>
-
-            <div id="opponent-options-rps" class="inactive">
-                <form>
-                    <input type="radio" id="rock" name="player" value="rock">
-                    <label for="rock">Rock</label><br>
-                    <input type="radio" id="paper" name="player" value="paper">
-                    <label for="paper">Paper</label><br>
-                    <input type="radio" id="scissors" name="player" value="scissors">
-                    <label for="scissors">Scissors</label><br>
-                    <button type="submit" onclick="getOpp()">Next</button>
-                </form><br>
-            </div>
-
-            <div id="opponent-options-rpsls" class="inactive">
-                <form>
-                    <input type="radio" id="rock2" name="player2" value="rock2">
-                    <label for="rock2">Rock</label><br>
-                    <input type="radio" id="paper2" name="player2" value="paper2">
-                    <label for="paper">Paper</label><br>
-                    <input type="radio" id="scissors2" name="player2" value="scissors2">
-                    <label for="scissors2">Scissors</label><br>
-                    <input type="radio" id="lizard" name="player2" value="lizard">
-                    <label for="lizard">Lizard</label><br>
-                    <input type="radio" id="spock" name="player2" value="spock">
-                    <label for="spock">Spock</label><br>
-                    <button type="submit" onclick="getOpp()">Next</button>
-                </form><br>
-            </div>
-
-            <div id="result" class="inactive">
-                <h1>Result:</h1>
-            </div>
-
-            <div id="result5" class="inactive"></div>
-
-            <div id="result6" class="inactive">
-                <h2>Player:</h2>
-            </div>
-
-            <div id="result2" class="inactive"></div>
-
-            <div id="result3" class="inactive">
-                <h2>Opponent:</h2>
-            </div>
-
-            <div id="result4" class="inactive"></div>
-
-            <div id="help" class="inactive">
-                <h2>Rules for Rock Paper Scissors:</h2>
-                <ul>
-                    <li>Scissors CUTS Paper</li>
-                    <li>Paper COVERS Rock</li>
-                    <li>Rock CRUSHES Scissors</li>
-                </ul>
-                <h2>Rules for the Rock Paper Scissors Lizard Spock:</h2>
-                <ul>
-                    <li>Scissors CUTS Paper</li>
-                    <li>Paper COVERS Rock</li>
-                    <li>Rock SMOOSHES Lizard</li>
-                    <li>Lizard POISONS Spock</li>
-                    <li>Spock SMASHES Scissors</li>
-                    <li>Scissors DECAPITATES Lizard</li>
-                    <li>Lizard EATS Paper</li>
-                    <li>Paper DISPROVES Spock</li>
-                    <li>Spock VAPORIZES Rock</li>
-                    <li>Rock CRUSHES Scissors</li>
-                </ul></div></div></body></html>
+		<!-- Your interface markup goes here -->
+		<!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
+	</div>
+</body>
+</html>

@@ -3,19 +3,23 @@
         <title>Rock</title>
         <!-- Link to your script file(s) and CSS in here somewhere -->
         <link href = "./styles.css" rel = "stylesheet">
-        <script src = ""></script>
+        <script src = "scripts.js"></script>
     </head>
     <body>
         <form id = "userinput" class = "">
+
             <input type = "radio" id = "rps" name = "game" value = "rps">
             <label for = "rps">Play rock, paper, scissors?</label>
             <break></break>
+
             <input type = "radio" id = "rpsls" name = "game" value = "rpsls">
             <label for = "rpsls">Play rock, paper, scissors, lizard, Spock?</label>
             <input type = "checkbox" id = "opponent" name = "playtype" value = "opponent">
             <break></break>
+
             <label for = "opponent">Play against an opponent?</label>
             <break></break>
+
             <input type = "radio" id = "rock" name = "player" value = "rock" class = "rps">
             <label>Rock</label>
             <input type = "radio" id = "paper" name = "player" value = "paper" class = "rps">
@@ -26,6 +30,7 @@
             <label class = "rpsls" hidden>Lizard</label>
             <input type = "radio" id = "spock" name = "player" value = "spock" class = "rpsls">
             <label class = "rpsls" hidden>Spock</label>
+            
             <break></break>
             <input type = "submit" id = "play" name = "controls" value = "Play">
             <input type = "submit" id = "startover" name = "controls" value = "Start Over">

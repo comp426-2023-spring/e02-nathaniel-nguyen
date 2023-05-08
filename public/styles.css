@@ -9,9 +9,9 @@ p {
 }
 
 div.active {
-    display: block;
+    display: center;
 }
 
 div.inactive {
-    display: none;
+    display: center;
 }

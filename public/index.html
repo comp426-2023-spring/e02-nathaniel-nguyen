@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>RPS and RPSLS</title>
+	<meta charset="UTF-8">
+	<title>Rock</title>
 	<link href="./styles.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	<script src="./scripts.js"></script>
@@ -12,15 +12,15 @@
 <body onload="showHideShots()">
 	<div class="container">
 		<form id="userinput" class="" action="javascript:void(0);">
-			<input type="radio" id="rps" name="game" value="rps" checked
-				onclick="resetShotSelection(); showHideShots();">
+            <a href="https://www.wikihow.com/Play-Rock,-Paper,-Scissors">RULES FOR RPS</a>
+            <br><br>
+            <a href="https://www.wikihow.com/Play-Rock-Paper-Scissors-Lizard-Spock">RULES FOR RPSLS</a>
+            <br><br>
+			<input type="radio" id="rps" name="game" value="rps" checked onclick="resetShotSelection(); showHideShots();">
 			<label for="rps">Play rock, paper, scissors?</label>
-			<a href="https://www.wikihow.com/Play-Rock,-Paper,-Scissors">RULES FOR RPS</a>
 			<br><br>
 			<input type="radio" id="rpsls" name="game" value="rpsls" onclick="resetShotSelection(); showHideShots();">
 			<label for="rpsls">Play rock, paper, scissors, lizard, Spock?</label>
-			<a href="https://www.wikihow.com/Play-Rock-Paper-Scissors-Lizard-Spock">
-				RULES FOR RPSLS</a>
 			<br><br>
 
 			<input type="checkbox" id="opponent" name="playtype" value="opponent"

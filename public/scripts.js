@@ -79,7 +79,7 @@ function showHideShots() {
     } else {
       let you = `You: ${result.player}`;
       let opponent = `Opponent: ${result.opponent}`;
-      let outcome = `Result: You ${result.result.toUpperCase()}!`;
+      let outcome = `Result: ${result.result.toUpperCase()}!`;
       resultsDiv.innerHTML = `${you}<br>${opponent}<br>${outcome}`;
     }
   }

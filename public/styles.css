@@ -1,17 +1,20 @@
 body {
+    text-align: center;
     background-color: white;
 }
 
 h1 {
+    text-align: center;
 }
 
 p {
+    text-align: center;
 }
 
 div.active {
-    display: center;
+    display: block;
 }
 
 div.inactive {
-    display: center;
+    display: none;
 }
